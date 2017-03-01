@@ -7,6 +7,7 @@ package a3;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.RobotSE;
 import becker.robots.Wall;
 
 /**
@@ -20,7 +21,7 @@ public class A3Q7 {
      */
     public static void main(String[] args) {
         City ez = new City();
-        Robot memes = new Robot(ez, 3, 3, Direction.SOUTH);
+        RobotSE memes = new RobotSE(ez, 3, 3, Direction.SOUTH);
         new Wall(ez, 4, 4, Direction.WEST);
         new Wall(ez, 4, 4, Direction.NORTH);
         new Wall(ez, 4, 5, Direction.NORTH);
@@ -57,57 +58,20 @@ public class A3Q7 {
         new Wall(ez, 2, 1, Direction.SOUTH);
         new Wall(ez, 2, 1, Direction.WEST);
         //end of final cube
-        int i=0;
-        int o=0;
-        int p=0;
-        int q=0;
-        //moving around first cube
-        while(i<3){
-            memes.move();
-            memes.move();
-            memes.move();
-            memes.turnLeft();
-            i++;
+        int i = 0;
+        for (int q = 0; q < 2; q++) {
+            while (i < 3) {
+                memes.move(3);
+                memes.turnLeft();
+                i++;
+            }
+            memes.move(3);
+            while (i > 0) {
+                memes.move(3);
+                memes.turnLeft();
+                i--;
+            }
+            memes.move(3);
         }
-        //moving to 3,3
-        memes.move();
-        memes.move();
-        memes.move();
-        //moving around second cube
-        while(o<3){
-            memes.move();
-            memes.move();
-            memes.move();
-            memes.turnLeft();
-            o++;
-        }
-        //moving to 3,3
-        memes.move();
-        memes.move();
-        memes.move();
-        //moving around third cube
-        while(p<3){
-            memes.move();
-            memes.move();
-            memes.move();
-            memes.turnLeft();
-            p++;
-        }
-        //moving to 3,3
-        memes.move();
-        memes.move();
-        memes.move();
-        //moving around final cube
-        while(q<3){
-            memes.move();
-            memes.move();
-            memes.move();
-            memes.turnLeft();
-            q++;
-        }
-        //moving to 3,3
-        memes.move();
-        memes.move();
-        memes.move();
     }
 }

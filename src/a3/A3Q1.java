@@ -24,15 +24,9 @@ public class A3Q1 {
         City ez = new City();
         Robot memes = new Robot(ez, 1, 1, Direction.EAST);
         new Wall(ez, 1, 5, Direction.EAST);
-        new Thing(ez, 1, 4);
-        for (;;) {
+        new Thing(ez, 1, 6);
+        while (memes.frontIsClear() && !(memes.canPickThing())) {
             memes.move();
-            if (memes.canPickThing()) {
-                break;
-            }
-            if (!memes.frontIsClear()) {
-                break;
-            }
         }
     }
 }

@@ -7,6 +7,7 @@ package a3;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.RobotSE;
 import becker.robots.Thing;
 
 /**
@@ -20,7 +21,7 @@ public class A3Q5 {
      */
     public static void main(String[] args) {
         City ez = new City();
-        Robot memes = new Robot(ez, 1, 1, Direction.EAST);
+        RobotSE memes = new RobotSE(ez, 1, 1, Direction.EAST);
         ez.showThingCounts(true);
         new Thing(ez, 1, 1);
         new Thing(ez, 1, 1);
@@ -37,11 +38,9 @@ public class A3Q5 {
             memes.pickThing();
             memes.move();
             memes.putThing();            
-            memes.turnLeft();
-            memes.turnLeft();
+            memes.turnAround();
             memes.move();
-            memes.turnLeft();
-            memes.turnLeft();
+            memes.turnAround();
         }
         if(!memes.canPickThing()){
             memes.move();

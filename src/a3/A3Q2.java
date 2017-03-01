@@ -7,6 +7,7 @@ package a3;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.RobotSE;
 import becker.robots.Wall;
 
 /**
@@ -20,7 +21,7 @@ public class A3Q2 {
      */
     public static void main(String[] args) {
         City ez = new City();
-        Robot memes = new Robot(ez, 0, 2, Direction.WEST);
+        RobotSE memes = new RobotSE(ez, 0, 2, Direction.WEST);
         new Wall(ez, 1, 2, Direction.EAST);
         new Wall(ez, 2, 2, Direction.EAST);
         new Wall(ez, 2, 2, Direction.SOUTH);
@@ -31,13 +32,10 @@ public class A3Q2 {
         new Wall(ez, 1, 2, Direction.NORTH);
         
         int i=0;
-        memes.move();
-        memes.move();
+        memes.move(2);
         memes.turnLeft();
         while(i<7){
-            memes.move();
-            memes.move();
-            memes.move();
+            memes.move(3);
             memes.turnLeft();
             i++;
         }

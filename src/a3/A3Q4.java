@@ -7,6 +7,7 @@ package a3;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.RobotSE;
 import becker.robots.Thing;
 import becker.robots.Wall;
 
@@ -22,7 +23,7 @@ public class A3Q4 {
     public static void main(String[] args) {
         // TODO code application logic here
         City ez = new City();
-        Robot memes = new Robot(ez, 1, 1, Direction.SOUTH);
+        RobotSE memes = new RobotSE(ez, 1, 1, Direction.SOUTH);
         new Wall(ez, 1, 1, Direction.NORTH);
         new Wall(ez, 1, 1, Direction.WEST);
         new Wall(ez, 2, 1, Direction.WEST);
@@ -54,16 +55,11 @@ public class A3Q4 {
             memes.turnLeft();
         }
 
-        for (;;) {
+        while (i<1) {
             if (memes.frontIsClear()) {
                 memes.move();
-                if (i == 1) {
-                    break;
-                }
                 if (memes.frontIsClear()) {
-                    memes.turnLeft();
-                    memes.turnLeft();
-                    memes.turnLeft();
+                    memes.turnRight();
                 }
                 if (memes.frontIsClear()) {
                 }
@@ -75,5 +71,6 @@ public class A3Q4 {
                 memes.turnLeft();
             }
         }
+        memes.move();
     }
 }

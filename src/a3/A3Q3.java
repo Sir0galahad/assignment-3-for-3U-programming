@@ -7,6 +7,7 @@ package a3;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.RobotSE;
 import becker.robots.Thing;
 import becker.robots.Wall;
 
@@ -22,7 +23,7 @@ public class A3Q3 {
     public static void main(String[] args) {
         // TODO code application logic here
         City ez = new City();
-        Robot memes = new Robot(ez, 1, 1, Direction.EAST);
+        RobotSE memes = new RobotSE(ez, 1, 1, Direction.EAST);
         new Thing(ez, 1, 2);
         new Thing(ez, 1, 2);
         new Thing(ez, 1, 2);
@@ -86,23 +87,19 @@ public class A3Q3 {
                 memes.move();
                 memes.turnLeft();
                 if (!memes.frontIsClear()) {
-                    memes.turnLeft();
-                    memes.turnLeft();
+                    memes.turnAround();
                 }
             }
         }
         while (memes.getAvenue() < 1) {
             if (memes.getDirection() == Direction.NORTH) {
-                memes.turnLeft();
-                memes.turnLeft();
-                memes.turnLeft();
+                memes.turnRight();
             }
             if (memes.getDirection() == Direction.SOUTH) {
                 memes.turnLeft();
             }
             if (memes.getDirection() == Direction.WEST) {
-                memes.turnLeft();
-                memes.turnLeft();
+                memes.turnAround();
             }
             memes.move();
         }
@@ -111,43 +108,34 @@ public class A3Q3 {
                 memes.turnLeft();
             }
             if (memes.getDirection() == Direction.SOUTH) {
-                memes.turnLeft();
-                memes.turnLeft();
-                memes.turnLeft();
+                memes.turnRight();
             }
             if (memes.getDirection() == Direction.EAST) {
-                memes.turnLeft();
-                memes.turnLeft();
+                memes.turnAround();
             }
             memes.move();
             }
             while (memes.getStreet() < 1) {
                 if (memes.getDirection() == Direction.EAST) {
-                    memes.turnLeft();
-                    memes.turnLeft();
-                    memes.turnLeft();
+                    memes.turnRight();
                 }
                 if (memes.getDirection() == Direction.WEST) {
                     memes.turnLeft();
                 }
                 if (memes.getDirection() == Direction.NORTH) {
-                    memes.turnLeft();
-                    memes.turnLeft();
+                    memes.turnAround();
                 }
                 memes.move();
             }
             while (memes.getStreet() > 1) {
                 if (memes.getDirection() == Direction.WEST) {
-                    memes.turnLeft();
-                    memes.turnLeft();
-                    memes.turnLeft();
+                    memes.turnRight();
                 }
                 if (memes.getDirection() == Direction.EAST) {
                     memes.turnLeft();
                 }
                 if (memes.getDirection() == Direction.SOUTH) {
-                    memes.turnLeft();
-                    memes.turnLeft();
+                    memes.turnAround();
                 }
                 memes.move();
             }
