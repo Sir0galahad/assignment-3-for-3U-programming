@@ -58,18 +58,11 @@ public class A3Q7 {
         new Wall(ez, 2, 1, Direction.SOUTH);
         new Wall(ez, 2, 1, Direction.WEST);
         //end of final cube
-        int i = 0;
-        for (int q = 0; q < 2; q++) {
-            while (i < 3) {
+        //int i = 0;
+        for (int q = 0; q < 4; q++) {
+            for (int i = 0; i < 3; i++) {
                 memes.move(3);
                 memes.turnLeft();
-                i++;
-            }
-            memes.move(3);
-            while (i > 0) {
-                memes.move(3);
-                memes.turnLeft();
-                i--;
             }
             memes.move(3);
         }
