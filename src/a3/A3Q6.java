@@ -72,12 +72,15 @@ public class A3Q6 {
         
         while (true) {
             memes.move();
+            //stopping at end
             if (!memes.canPickThing()) {
                 break;
             }
+            //picking up whole pile
             while (memes.canPickThing()) {
                 memes.pickThing();
             }
+            //moving forward until backpack is empty placing something every time
             while (memes.countThingsInBackpack() > 0) {
                 while (!(memes.getDirection() == Direction.EAST)) {
                     memes.turnLeft();
@@ -85,6 +88,7 @@ public class A3Q6 {
                 memes.putThing();
                 memes.move();
             }
+            //return to the piles 
             memes.turnAround();
             memes.move();
             while (memes.canPickThing()) {

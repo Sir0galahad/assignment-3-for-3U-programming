@@ -25,6 +25,7 @@ public class A3Q1 {
         Robot memes = new Robot(ez, 1, 1, Direction.EAST);
         new Wall(ez, 1, 5, Direction.EAST);
         new Thing(ez, 1, 6);
+        //move untill can pick a thing or it runs into something
         while (memes.frontIsClear() && !(memes.canPickThing())) {
             memes.move();
         }

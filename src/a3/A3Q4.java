@@ -47,14 +47,15 @@ public class A3Q4 {
         //new Wall(ez, 1, 2, Direction.NORTH);
 
         int i = 0;
-
+        //moving till it touched a wall
         while (memes.frontIsClear()) {
             memes.move();
         }
+        //making wall be on right side
         while (!memes.frontIsClear()) {
             memes.turnLeft();
         }
-
+        //check wall to right until there is a hole and then if there is a hole move through and stop
         while (i<1) {
             if (memes.frontIsClear()) {
                 memes.move();

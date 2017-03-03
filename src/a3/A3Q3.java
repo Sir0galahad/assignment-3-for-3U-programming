@@ -68,15 +68,18 @@ public class A3Q3 {
         new Wall(ez, 1, 2, Direction.NORTH);
         new Wall(ez, 1, 1, Direction.NORTH);
         for (;;) {
+            //every time it can pick something pick something
             while (memes.canPickThing()) {
                 memes.pickThing();
             }
+            //move until front is blocked
             if (memes.frontIsClear()) {
                 memes.move();
             }
             while (memes.canPickThing()) {
                 memes.pickThing();
             }
+            //if run into wall move down one
             if (!memes.frontIsClear()) {
                 while (!(memes.getDirection() == Direction.SOUTH)) {
                     memes.turnLeft();
@@ -90,6 +93,7 @@ public class A3Q3 {
                     memes.turnAround();
                 }
             }
+            //return to 1,1 no matter where you are
         }
         while (memes.getAvenue() < 1) {
             if (memes.getDirection() == Direction.NORTH) {

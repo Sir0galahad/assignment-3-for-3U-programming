@@ -33,7 +33,9 @@ public class A3Q5 {
         new Thing(ez, 1, 1);
         new Thing(ez, 1, 1);
         new Thing(ez, 1, 1);
-        while(true){
+        int i=0;
+        while(i<1){
+            //moving pile over one square one at a time
         if(memes.canPickThing()){
             memes.pickThing();
             memes.move();
@@ -42,9 +44,10 @@ public class A3Q5 {
             memes.move();
             memes.turnAround();
         }
+        //when you run out of things to move move to new pile and stop
         if(!memes.canPickThing()){
             memes.move();
-            break;
+            i++;
         }
         
         }
